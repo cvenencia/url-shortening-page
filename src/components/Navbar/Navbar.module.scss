@@ -1,0 +1,73 @@
+@use '../../global.scss';
+@use '../../sass/mixins' as mixins;
+
+.openMenuBtn {
+    display: none;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+        width: 2em;
+    }
+}
+
+@include mixins.mq(tablet) {
+    .nav {
+        justify-content: space-between;
+    }
+    .openMenuBtn {
+        display: block;
+    }
+}
+
+.navContent {
+    flex-basis: 100%;
+    justify-content: space-between;
+
+    &,
+    .navLeft,
+    .navRight {
+        align-items: center;
+    }
+
+    @include mixins.mq(tablet) {
+        &.hidden {
+            display: none;
+        }
+
+        & {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90%, 20rem);
+            padding-inline: var(--padding-inline);
+            padding-block: 2em;
+            background-color: var(--clr-secondary);
+        }
+
+        &,
+        .navLeft,
+        .navRight {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .navRight {
+            &,
+            & a:nth-child(2) {
+                align-self: stretch;
+            }
+
+            & a:nth-child(2) {
+                text-align: center;
+            }
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+}

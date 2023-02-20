@@ -1,0 +1,75 @@
+.bold {
+    font-weight: 600;
+}
+
+$values: 300, 400, 600, 800;
+@each $value in $values {
+    .clr-neutral-#{$value} {
+        color: var(--clr-neutral-#{$value});
+    }
+}
+
+.fs-xs {
+    font-size: 0.75rem;
+}
+
+.fs-s {
+    font-size: 0.875rem;
+}
+
+.fs-base {
+    font-size: 1rem;
+}
+
+.mb-1 {
+    margin-block: 1em;
+}
+
+.mb-2 {
+    margin-block: 2em;
+}
+
+.container {
+    padding-inline: var(--padding-inline);
+}
+
+$values: 1, 2, 3;
+@each $value in $values {
+    .gap-#{$value} {
+        gap: #{$value}rem;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.sr-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+}
+
+.border-radius-lg {
+    border-radius: 5em;
+}
+
+.border-radius-s {
+    border-radius: 0.5em;
+}
+
+.relative {
+    position: relative;
+}

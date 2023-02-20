@@ -1,0 +1,31 @@
+@use './utilities';
+
+.btn-main {
+    text-decoration: none;
+    border: none;
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-100);
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    transition: background-color 100ms;
+
+    &:is(:hover, :focus-visible) {
+        background-color: var(--clr-primary-200);
+    }
+}
+
+.link {
+    text-decoration: none;
+    transition: color 100ms;
+    @extend .clr-neutral-300;
+
+    &:is(:hover, :focus-visible) {
+        @extend .clr-neutral-800;
+    }
+}
+
+// .spinner {
+//     width: fit-content;
+//     margin-block: 2em;
+//     margin-inline: auto;
+// }

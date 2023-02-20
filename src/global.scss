@@ -1,0 +1,35 @@
+@use './sass/reset';
+@use './sass/utilities';
+@use './sass/components';
+@use './sass/mixins' as mixins;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    --padding-inline: 10.625rem;
+
+    @include mixins.mq(tablet) {
+        --padding-inline: 5rem;
+    }
+
+    @include mixins.mq(tablet-s) {
+        --padding-inline: 2rem;
+    }
+
+    @include mixins.mq(mobile) {
+        --padding-inline: 1rem;
+    }
+
+    --clr-primary: hsl(180, 66%, 49%);
+    --clr-primary-200: hsl(180, 56%, 75%);
+    --clr-secondary: hsl(257, 27%, 26%);
+    --clr-error: hsl(0, 87%, 67%);
+    --clr-neutral-100: white;
+    --clr-neutral-300: hsl(0, 0%, 75%);
+    --clr-neutral-400: hsl(257, 7%, 63%);
+    --clr-neutral-600: hsl(255, 11%, 22%);
+    --clr-neutral-800: hsl(260, 8%, 14%);
+}

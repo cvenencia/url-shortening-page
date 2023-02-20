@@ -1,14 +1,19 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
+import './global.scss';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route index element={<Home />} />
-                <Route path='*' element={<Navigate to='/' />} />
-            </Routes>
-        </BrowserRouter>
+        <>
+            <Navbar />
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<Home />} />
+                    <Route path='*' element={<Navigate to='/' />} />
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
 
